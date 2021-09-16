@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap-5.1.1-dist/css/bootstrap.min.css' %}"/>
+</head>
+<body>
+<div class="container mt-5">
+    <form class="row gy-2 gx-3 justify-content-center">
+        <div class="col-6">
+            <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Search for track...">
+            </div>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+    <div class="row justify-content-center mt-5 loading-indicator d-none">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body text-center">
+                    Getting the results...
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5 no-result d-none">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body text-center">
+                    Couldn't not found any result...
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center result-table d-none">
+        <div class="col-8">
+            <table class="table mt-5">
+                <thead>
+                <tr>
+                    <th scope="col">Artist Name</th>
+                    <th scope="col">Track Name</th>
+                    <th scope="col">Cover Image</th>
+                    <th scope="col">Preview Link</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry the Bird</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'bootstrap-5.1.1-dist/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
