@@ -14,10 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.urls import path, include
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('tracks/', include('alotechMusicSearch.webService.urls')),
-    path('', views.search_form, name='search-form'),
+    path('<str:genre>', views.search_track, name='search-track'),
 ]
